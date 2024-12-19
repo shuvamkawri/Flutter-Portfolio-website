@@ -30,16 +30,19 @@ class Header extends StatelessWidget {
   Widget _navLink(BuildContext context, String text, String route) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, route);
-        },
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: Colors.blueAccent,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click, // Changes the cursor to hand on hover
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, route);
+          },
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.blueAccent,
+            ),
           ),
         ),
       ),
